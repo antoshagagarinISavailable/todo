@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import Counter from "./Counter/Counter";
+import UsersList from "./Components/UsersList";
 
-function App() {
-  return <Counter />;
+function App(props) {
+  return <UsersList users={props.users} />;
 }
 
 export default App;
