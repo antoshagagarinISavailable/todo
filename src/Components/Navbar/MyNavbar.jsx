@@ -17,10 +17,10 @@ function MyNavbar() {
               Dating app
             </Link>
             <Link className="nav-link" to="/basket">
-              Basket
+              Basket app
             </Link>
             <Link className="nav-link" to="/another">
-              Another
+              Another app
             </Link>
           </Nav>
         </Navbar.Collapse>

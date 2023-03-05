@@ -16,9 +16,24 @@ const Counter = (props) => {
         >
           +
         </Button>
-        <Badge className="mx-2" bg="secondary" pill>
+        {/* <Badge className="mx-2" bg="secondary" pill>
           {props.value}
-        </Badge>
+        </Badge> */}
+        {props.value < 0 ? (
+          <Badge className="mx-2" bg="danger" pill>
+            {"total: "}
+            {props.value}
+          </Badge>
+        ) : props.value == 0 ? (
+          <Badge className="mx-2" bg="warning" pill>
+            empty!
+          </Badge>
+        ) : (
+          <Badge className="mx-2" bg="secondary" pill>
+            {"total: "}
+            {props.value}
+          </Badge>
+        )}
         <Button
           variant="outline-secondary"
           size="sm"
