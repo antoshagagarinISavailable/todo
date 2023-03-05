@@ -4,6 +4,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import * as users from "./API/API/fake.api/user.api";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App users={users} />);
+root.render(
+  <BrowserRouter>
+    <App users={users} />
+  </BrowserRouter>
+);

@@ -6,20 +6,20 @@ const UsersList = (props) => {
   const [users, setUsers] = useState(props.users.fetchAll());
 
   const handleDelete = (_id) => {
-    setUsers([...users.filter((el) => el._id != _id)]);
+    setUsers([...users.filter((el) => el._id !== _id)]);
   };
 
   const spanRender = () => {
     return users.length == 0 ? (
-      <Badge pill bg="danger">
+      <Badge className="m-2" pill bg="danger">
         Никто с тобой не затусит
       </Badge>
     ) : users.length > 1 && users.length < 5 ? (
-      <Badge pill bg="primary">
+      <Badge className="m-2" pill bg="primary">
         {users.length} человека тусанет с тобой сегодня
       </Badge>
     ) : (
-      <Badge pill bg="primary">
+      <Badge className="m-2" pill bg="primary">
         {users.length} человек тусанет с тобой сегодня
       </Badge>
     );
