@@ -1,11 +1,12 @@
 import React from "react";
+import { Badge, Button } from "react-bootstrap";
 
 const User = (props) => {
   const renderQualities = () => {
     return props.user.qualities.map((el) => (
-      <span className={"badge m-1 bg-" + el.color} key={el._id}>
+      <Badge pill className={"badge m-1 bg-" + el.color} key={el._id}>
         {el.name}
-      </span>
+      </Badge>
     ));
   };
   return (
@@ -13,15 +14,34 @@ const User = (props) => {
       <td>{props.user.name}</td>
       <td>{renderQualities()}</td>
       <td>{props.user.profession.name}</td>
-      <td>{props.user.completedMeetings}</td>
-      <td>{props.user.rate}</td>
       <td>
-        <button
+        <Badge pill bg="dark">
+          {props.user.completedMeetings}
+        </Badge>
+      </td>
+      <td>
+        {props.user.rate > 4 ? (
+          <Badge pill bg="success">
+            {props.user.rate}
+          </Badge>
+        ) : props.user.rate < 4 && props.user.rate > 3 ? (
+          <Badge pill bg="warning">
+            {props.user.rate}
+          </Badge>
+        ) : (
+          <Badge pill bg="danger">
+            {props.user.rate}
+          </Badge>
+        )}
+      </td>
+
+      <td>
+        <Button
           onClick={() => props.onDelete(props.user._id)}
-          className="btn btn-danger"
+          variant="outline-danger"
         >
           Delete
-        </button>
+        </Button>
       </td>
     </tr>
   );

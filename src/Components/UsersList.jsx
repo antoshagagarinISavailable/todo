@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Badge } from "react-bootstrap";
 import User from "./User";
 
 const UsersList = (props) => {
@@ -10,15 +11,17 @@ const UsersList = (props) => {
 
   const spanRender = () => {
     return users.length == 0 ? (
-      <span className="badge bg-danger m-1">Никто с тобой не затусит</span>
+      <Badge pill bg="danger">
+        Никто с тобой не затусит
+      </Badge>
     ) : users.length > 1 && users.length < 5 ? (
-      <span className="badge bg-primary m-1">
+      <Badge pill bg="primary">
         {users.length} человека тусанет с тобой сегодня
-      </span>
+      </Badge>
     ) : (
-      <span className="badge bg-primary m-1">
+      <Badge pill bg="primary">
         {users.length} человек тусанет с тобой сегодня
-      </span>
+      </Badge>
     );
   };
 

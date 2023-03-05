@@ -11,7 +11,7 @@ function Example() {
 
   return (
     <>
-      <Button className="m-2" variant="primary" onClick={handleShow}>
+      <Button className="m-2" variant="outline-primary" onClick={handleShow}>
         Log in
       </Button>
 
