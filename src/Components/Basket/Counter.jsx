@@ -43,6 +43,11 @@ const Counter = (props) => {
         </Button>
       </td>
       <td>
+        <Badge className="mx-2" bg="secondary">
+          &#36; {props.price * props.value}
+        </Badge>
+      </td>
+      <td>
         <Button
           onClick={() => props.handleDelete(props.id)}
           variant="outline-secondary"

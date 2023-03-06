@@ -1,6 +1,10 @@
 import React from "react";
 import { Badge, Button } from "react-bootstrap";
 
+import Qualities from "./Qualities";
+import Rate from "./Rate";
+import CompletedMeetings from "./CompletedMeetings";
+
 const User = (props) => {
   const renderQualities = () => {
     return props.user.qualities.map((el) => (
@@ -9,31 +13,14 @@ const User = (props) => {
       </Badge>
     ));
   };
+
   return (
     <tr>
       <td>{props.user.name}</td>
-      <td>{renderQualities()}</td>
+      <Qualities renderQualities={renderQualities} />
       <td>{props.user.profession.name}</td>
-      <td>
-        <Badge pill bg="dark">
-          {props.user.completedMeetings}
-        </Badge>
-      </td>
-      <td>
-        {props.user.rate > 4 ? (
-          <Badge pill bg="success">
-            {props.user.rate}
-          </Badge>
-        ) : props.user.rate < 4 && props.user.rate > 3 ? (
-          <Badge pill bg="warning">
-            {props.user.rate}
-          </Badge>
-        ) : (
-          <Badge pill bg="danger">
-            {props.user.rate}
-          </Badge>
-        )}
-      </td>
+      <CompletedMeetings completedMeetings={props.user.completedMeetings} />
+      <Rate rate={props.user.rate} />
 
       <td>
         <Button

@@ -1,9 +1,27 @@
 import React from "react";
-
+import { CardGroup } from "react-bootstrap";
+import AppCard from "./AppCard";
 const HomePage = () => {
   return (
     <>
-      <h1>This is a Home Page</h1>
+      <div className="container my-3">
+        <h3>This is a Home Page</h3>
+        <p>List of my tiny App's</p>
+      </div>
+      <CardGroup>
+        <AppCard
+          title={"Dating App"}
+          description={"desctiption"}
+          date={new Date("2023-03-04T12:00:00")}
+          link={"/dating"}
+        />
+        <AppCard
+          title={"Basket App"}
+          description={"desctiption"}
+          date={new Date("2023-03-05T21:46:00")}
+          link={"/basket"}
+        />
+      </CardGroup>
     </>
   );
 };
