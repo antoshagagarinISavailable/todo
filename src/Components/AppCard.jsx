@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function AppCard(props) {
   const DateFromStartRender = () => {
-    let hoursLast = (Date.now() - Date.parse(props.date)) / 3.6e6;
+    let hoursLast = (Date.now() - props.date.getTime()) / 3.6e6;
 
     return (Math.floor(hoursLast / 24) == 1 &&
       Math.floor(hoursLast % 24) < 2) ||

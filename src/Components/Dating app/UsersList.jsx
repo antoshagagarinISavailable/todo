@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import { Badge } from "react-bootstrap";
-import User from "./User";
+import User from "./UI/User";
+import Pagination from "../UI/Pagination";
+import { paginate } from "../../utilites/paginate";
 
 const UsersList = (props) => {
   const [users, setUsers] = useState(props.users.fetchAll());
+  const [currentPage, SetCurrentPage] = useState(1);
+
+  const count = users.length;
+  const pageSize = 4;
+
+  const userCrop = paginate(users, currentPage, pageSize);
+
+  const handlePageChange = (pageIndex) => {
+    SetCurrentPage(pageIndex);
+  };
 
   const handleDelete = (_id) => {
     setUsers([...users.filter((el) => el._id !== _id)]);
@@ -26,7 +38,7 @@ const UsersList = (props) => {
   };
 
   const renderUsers = () => {
-    return users.map((el) => (
+    return userCrop.map((el) => (
       <User key={el._id} user={el} onDelete={handleDelete} />
     ));
   };
@@ -46,6 +58,12 @@ const UsersList = (props) => {
         </thead>
         <tbody>{renderUsers()}</tbody>
       </table>
+      <Pagination
+        itemsCount={count}
+        currentPage={currentPage}
+        pageSize={pageSize}
+        onPageChange={handlePageChange}
+      />
     </>
   );
 };

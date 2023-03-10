@@ -16,10 +16,10 @@ const HomePage = () => {
           link={"/dating"}
         />
         <AppCard
-          title={"Basket App"}
+          title={"Cart App"}
           description={"desctiption"}
           date={new Date("2023-03-05T21:46:00")}
-          link={"/basket"}
+          link={"/cart"}
         />
       </CardGroup>
     </>

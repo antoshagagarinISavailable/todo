@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge, Button } from "react-bootstrap";
 
-const Counter = (props) => {
+const Item = (props) => {
   return (
     <tr>
       <td>
@@ -16,9 +16,6 @@ const Counter = (props) => {
         >
           +
         </Button>
-        {/* <Badge className="mx-2" bg="secondary" pill>
-          {props.value}
-        </Badge> */}
         {props.value < 0 ? (
           <Badge className="mx-2" bg="danger" pill>
             {"total: "}
@@ -59,4 +56,4 @@ const Counter = (props) => {
   );
 };
 
-export default Counter;
+export default Item;

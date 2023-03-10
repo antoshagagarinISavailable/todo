@@ -16,8 +16,8 @@ function MyNavbar() {
             <Link className="nav-link" to="/dating">
               Dating app
             </Link>
-            <Link className="nav-link" to="/basket">
-              Basket app
+            <Link className="nav-link" to="/cart">
+              Cart app
             </Link>
             <Link className="nav-link" to="/another">
               Another app
