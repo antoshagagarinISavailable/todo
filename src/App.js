@@ -8,6 +8,7 @@ import Layout from "./Components/Layout";
 import PageNotFound from "./Components/PageNotFound";
 import HomePage from "./Components/HomePage";
 import ItemsList from "./Components/Cart/ItemsList";
+import Dragndrop from "./API/API/Drag-and-drop/Dragndrop";
 
 function App(props) {
   return (
@@ -16,10 +17,10 @@ function App(props) {
 
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="home" element={<HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path="dating" element={<UsersList users={props.users} />} />
           <Route path="cart" element={<ItemsList />} />
-          <Route path="another" />
+          <Route path="dragndrop" element={<Dragndrop />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

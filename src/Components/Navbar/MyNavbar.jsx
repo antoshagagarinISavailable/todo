@@ -7,20 +7,20 @@ function MyNavbar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Link className="navbar-brand" to="/home">
+        <Link className="navbar-brand" to="/">
           My React Practice
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link className="nav-link" to="/dating">
-              Dating app
+              Dating
             </Link>
             <Link className="nav-link" to="/cart">
-              Cart app
+              Cart
             </Link>
-            <Link className="nav-link" to="/another">
-              Another app
+            <Link className="nav-link" to="/dragndrop">
+              Drag and drop
             </Link>
           </Nav>
         </Navbar.Collapse>
