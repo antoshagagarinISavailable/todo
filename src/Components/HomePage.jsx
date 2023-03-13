@@ -21,6 +21,12 @@ const HomePage = () => {
           date={new Date("2023-03-05T21:46:00")}
           link={"/cart"}
         />
+        <AppCard
+          title={"Drag and Drop"}
+          description={"desctiption"}
+          date={new Date("2023-03-11T19:10:00")}
+          link={"/dragndrop"}
+        />
       </CardGroup>
     </>
   );

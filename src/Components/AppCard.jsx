@@ -1,5 +1,6 @@
 import { Badge, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { formatDistanceToNow, formatRelative } from "date-fns";
 
 function AppCard(props) {
   const DateFromStartRender = () => {
@@ -62,7 +63,12 @@ function AppCard(props) {
           </Link>
         </Button>
       </Card.Body>
-      <Card.Footer className="text-muted">{DateFromStartRender()}</Card.Footer>
+      <Card.Footer className="text-muted">
+        {formatDistanceToNow(props.date.getTime())}
+        {/* {formatRelative(Date.now(), props.date.getTime())} */}
+        {" ago"}
+        {/* {DateFromStartRender()} */}
+      </Card.Footer>
     </Card>
   );
 }
