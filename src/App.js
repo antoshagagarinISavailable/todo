@@ -8,7 +8,7 @@ import Layout from "./Components/Layout";
 import PageNotFound from "./Components/PageNotFound";
 import HomePage from "./Components/HomePage";
 import ItemsList from "./Components/Cart/ItemsList";
-import Dragndrop from "./API/API/Drag-and-drop/Dragndrop";
+import Dragndrop from "./Components/Drag-and-drop/Dragndrop";
 
 function App(props) {
   return (
